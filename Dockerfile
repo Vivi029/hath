@@ -1,4 +1,4 @@
-FROM ibmjava:sfj-alpine
+FROM ibmjava:sfj
 
 LABEL maintainer="notexist@tdcpf.org"
 
@@ -7,7 +7,7 @@ ENV HatH_ID 5digitsID
 ENV HatH_KEY 20chars&numscombiKEY
 
 ## Common settings
-ENV HatH_PORT 9527
+ENV HatH_PORT 7777
 
 ## Fetch binary
 ENV HatH_VERSION 1.6.4
