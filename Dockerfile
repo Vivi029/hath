@@ -26,6 +26,7 @@ ENV HatH_ARGS --disable_logging
 
 # Container Setup
 RUN useradd -ms /bin/bash "$HatH_USER"
+RUN apt-get update && apt-get install -y --no-install-recommends unzip && rm -rf /var/lib/apt/lists/*
 USER "$HatH_USER"
 
 RUN mkdir "$HatH_PATH" && \
