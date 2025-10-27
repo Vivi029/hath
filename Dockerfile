@@ -1,4 +1,4 @@
-FROM ibmjava:sfj-alpine
+FROM ibmjava:sfj
 
 LABEL maintainer="notexist@tdcpf.org"
 
