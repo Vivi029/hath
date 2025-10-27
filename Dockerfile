@@ -1,4 +1,4 @@
-FROM ibmjava:sfj
+FROM ibmjava:sfj-alpine
 
 LABEL maintainer="notexist@tdcpf.org"
 
@@ -7,7 +7,7 @@ ENV HatH_ID 5digitsID
 ENV HatH_KEY 20chars&numscombiKEY
 
 ## Common settings
-ENV HatH_PORT 7777
+ENV HatH_PORT 9527
 
 ## Fetch binary
 ENV HatH_VERSION 1.6.4
@@ -25,7 +25,7 @@ ENV JAVA_TOOL_OPTIONS "-Dsun.jnu.encoding=UTF-8 -Dfile.encoding=UTF-8"
 ENV HatH_ARGS --disable_logging
 
 # Container Setup
-RUN adduser -D "$HatH_USER"
+RUN useradd -ms /bin/bash "$HatH_USER"
 USER "$HatH_USER"
 
 RUN mkdir "$HatH_PATH" && \
