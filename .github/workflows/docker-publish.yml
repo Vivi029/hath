@@ -103,4 +103,4 @@ jobs:
           min-versions-to-keep: 5
           package-name: 'hath'
           package-type: 'container'
-          ignore-versions: '^v(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$|^master$|^nightly$'
+          ignore-versions: '^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$'
