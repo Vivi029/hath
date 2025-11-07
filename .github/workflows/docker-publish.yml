@@ -100,7 +100,7 @@ jobs:
       - name: Delete all untagged container versions
         uses: actions/delete-package-versions@v5
         with:
-          delete-only-untagged-version: 'true'
-          min-versions-to-keep: 10
+          min-versions-to-keep: 5
           package-name: 'hath'
           package-type: 'container'
+          ignore-versions: '^v(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$|^master$|^nightly$'
