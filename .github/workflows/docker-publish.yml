@@ -101,6 +101,6 @@ jobs:
         uses: actions/delete-package-versions@v5
         with:
           delete-only-untagged-version: 'true'
-          min-versions-to-keep: 1
+          min-versions-to-keep: 10
           package-name: 'hath'
           package-type: 'container'
