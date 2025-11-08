@@ -7,7 +7,7 @@ name: Docker auto build
 
 on:
   schedule:
-    - cron: '23 15 * * *'
+    - cron: '23 15 * * 5'
   push:
     branches: [ "master" ]
     # Publish semver tags as releases.
@@ -97,9 +97,9 @@ jobs:
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
 
-      - name: Delete all untagged container versions
-        uses: actions/delete-package-versions@v5
-        with:
-          package-name: 'hath'
-          package-type: 'container'
-          delete-only-untagged-versions: 'true'
+      # - name: Delete all untagged container versions
+      #   uses: actions/delete-package-versions@v5
+      #   with:
+      #     package-name: 'hath'
+      #     package-type: 'container'
+      #     delete-only-untagged-versions: 'true'
